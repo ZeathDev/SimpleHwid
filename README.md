@@ -1,2 +1,2 @@
 # SimpleHwid
-A Simple Hwid Example
+一个简单的Hwid加密算法
