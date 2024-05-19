@@ -39,11 +39,6 @@ public class MathUtils {
     }
 
     public static String AES(String string, String password) throws Exception {
-        // Null判断
-        if (string == null || password == null) {
-            return null;
-        }
-
         MathUtils mathUtils = new MathUtils(password);
         String plaintext = string;
         byte[] data = plaintext.getBytes();
@@ -54,12 +49,8 @@ public class MathUtils {
     }
 
     public static String AntiAES(String base64String, String password) throws Exception {
-        // Null判断
-        if (base64String == null || password == null) {
-            return null;
-        }
-
         MathUtils mathUtils = new MathUtils(password);
+        // Base64解密
         byte[] plaintext = Base64.getDecoder().decode(base64String);
         // AES解密
         byte[] decryptedData = mathUtils.decrypt(plaintext);
