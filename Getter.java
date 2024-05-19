@@ -1,18 +1,21 @@
 import java.io.IOException;
 
 public class Getter {
+    // 自定义加密密钥
+    private static final String key = "ZeathDev";
+
     public static void main(String[] args) {
         try {
-            System.out.println("加密前:" + getUUIDFromWMIC());
-            String str = MathUtils.AES(getUUIDFromWMIC(), "114514");
+            System.out.println("加密前:" + getUUID());
+            String str = MathUtils.AES(getUUID(), key.toString());
             System.out.println("加密后:" + str);
-            System.out.println("解密后:" + MathUtils.AntiAES(str, "114514"));
+            System.out.println("解密后:" + MathUtils.AntiAES(str, key.toString()));
         } catch (Exception e) {
             System.out.println("Can't get uuid");
         }
     }
 
-    private static String getUUIDFromWMIC() throws IOException {
+    private static String getUUID() throws IOException {
         Process process = Runtime.getRuntime().exec("wmic csproduct get uuid");
         String output = parseOutput(process);
         return output.substring(4).trim();

@@ -8,7 +8,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class MathUtils {
     private static final String ALGORITHM = "AES";
-    private static final int KEY_SIZE = 128; // 128, 192, 256
+    private static final int KEY_SIZE = 128;
 
     private byte[] key;
 
