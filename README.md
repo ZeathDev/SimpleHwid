@@ -4,7 +4,7 @@
 ## 如何使用
 调用MathUtils里的`AES(string, keyword)`进行加密
 
-调用MathUtils里的`AntiAES(string, keyword)`进行解密密
+调用MathUtils里的`AntiAES(string, keyword)`进行解密
 
 注意: AES加密后的结果被Base64二次加密，若无次需要可以自行删除
 
